@@ -2,12 +2,11 @@ import './App.css';
 import { useForm } from "react-hook-form";
 
 function App() {
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    mode: "onChange"
-  });
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmit  = (data) => {
     console.log(data);
+    reset();
   };
   return (
     <div className="App">
